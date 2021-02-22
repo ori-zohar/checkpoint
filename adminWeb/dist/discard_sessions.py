@@ -12,14 +12,14 @@ from cpapi import APIClient, APIClientArgs
 
 def main():
     # getting details from the user
-    api_server = "103.8.192.99"#input("Enter server IP address or hostname:")
-    username = "admin" #input("Enter username: ")
+    api_server = input("Enter server IP address or hostname:")
+    username = input("Enter username: ")
 
     if sys.stdin.isatty():
-        password = "Aa123456"#getpass.getpass("Enter password: ")
+        password = getpass.getpass("Enter password: ")
     else:
         print("Attention! Your password will be shown on the screen!")
-        password = "Aa123456" #input("Enter password: ")
+        password = input("Enter password: ")
 
     client_args = APIClientArgs(server=api_server)
 
