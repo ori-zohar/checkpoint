@@ -22,7 +22,7 @@ from tornado.httpclient import HTTPClient ,AsyncHTTPClient
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 config =configparser.ConfigParser()
 config.sections()
-config.read(r"C:\Users\s8498053.ARMY\Desktop\WEB_bini\python\_blocking_opening.ini")
+config.read(r"C:\Desktop\WEB_bini\python\_blocking_opening.ini")
 from cpapi import APIClient , APIClientArgs
 client_args = APIClientArgs(server = "")
 with APIClient(client_args) as client:
