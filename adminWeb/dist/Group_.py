@@ -17,16 +17,16 @@ import urllib3
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 config =configparser.ConfigParser()
 config.sections()
-config.read(r"\\hmlotemvfs\Mamram\PublicMamram\תחום טכנולוגיות 2018\MDC\Personal - תיקיות אישיות\ori zohar\checkpoint\test_successfully\_blocking_opening.ini")
+config.read(r"path")
 from cpapi import APIClient, APIClientArgs
-client_args = APIClientArgs(server = "103.8.192.99")
+client_args = APIClientArgs(server = "ip addrees")
 with APIClient(client_args) as client:
      NET_class_A_source = []
      NET_class_B_source = []
      NET_class_C_source = []
-     host_source = ["103.17.24.26" , "18.66.24.2"]
+     host_source = [""]
      Group_name = input("Enter the name of Group:")
-     check_class_C = ["103.23.21.0"]
+     check_class_C = [""]
      host = host_source
      NET_class_C = check_class_C
 
@@ -532,17 +532,7 @@ def check_if_the_object_exists_Class_C(check_class_C ):
 def main():
     global host
     global log_file
-    log_file = open (r"\\hmlotemvfs\Mamram\PublicMamram\תחום טכנולוגיות 2018\MDC\Personal - תיקיות אישיות\ori zohar\checkpoint\logfile\logfile.txt " , 'w+')
-    login (username = "admin" , password = "Aa123456")
-    check_if_the_object_exists_Class_C(check_class_C = check_class_C)
-    publish()
-    time.sleep(3)
-    Association_for_object()
-    print(NET_class_C)
-    set_Group(Group_name = Group_name  ,add_object = NET_class_C)
-    publish()
-    disconnect()
-    logout()
+    log_file = open (r" path " , 'w+')
 
 
     # close the log file
