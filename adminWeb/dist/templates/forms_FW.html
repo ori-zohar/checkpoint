@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">מידור רישתי</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">טפסים</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="bini.html">טופס לפתיחת חסימות</a>
+                                            <a class="nav-link" href="Group.html">הוספת סיגמנט לקבוצה</a>
+                                            <a class="nav-link" href=#></a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                                </nav>
+                                 <!-- partial:index.partial.html -->
+                                <!-- Large modal -->
+                                <div class="container mt-5">
+                                    <button class="btn btn-success btn-block btn-lg" id="modalToggle">לפתיחת חסימות</button>
+                                </div>
+                                <div id="modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="wizard-title">טופס לפתיחת חסימות</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" data-toggle="tab" href="#infoPanel" role="tab">Info</a>
+                                                    <li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#ads" role="tab">צירוף קובץ</a>
+                                                    <li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#Source" role="tab">Source</a>
+                                                    <li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#destintion" role="tab">destintion</a>
+                                                    <li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#port" role="tab">port</a>
+                                                    <li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#schedulePanel" role="tab">Schedule</a>
+                                                    <li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#reviewPanel" role="tab">Review</a>
+                                                    <li>
+                                                </ul>
+
+                                                <div class="tab-content mt-2">
+                                                    <div class="tab-pane fade show active" id="infoPanel" role="tabpanel">
+                                                        <h4>Personal Information</h4>
+                                                        <div class="form-group">
+                                                            <label for="campaignName">(military)identity number</label>
+                                                            <input type="text" class="form-text" id='(military)identity number'></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="campaignName">project</label>
+                                                            <input type="text" class="form-text" id='project'></input>
+                                                        </div>
+
+                                                        <button class="btn btn-secondary" id="infoContinue">Continue</button>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="ads" role="tabpanel">
+                                                        <h4>file </h4>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputFile">מענה הגנה</label>
+                                                            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                                            <small id="fileHelp" class="form-text text-muted">אם קיים מענה הגנה יש להוסיף</small>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputFile">אישור סא"ל</label>
+                                                            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                                            <small id="fileHelp" class="form-text text-muted">אישור סא"ל לפי מידניות אישורים
+                                                        </div>
+                                                        <button class="btn btn-secondary" id="adsContinue">Continue</button>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="placementPanel" role="tabpanel">
+                                                        <h4>Source</h4>
+                                                        <div id="accordion" class="mb-3" role="tablist" aria-multiselectable="true">
+                                                            <div class="card">
+                                                                <div class="card-header" role="tab" id="headingOne">
+                                                                    <h5 class="mb-0">
+                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                            Ip Address Location
+                                                                        </a>
+                                                                    </h5>
+                                                                </div>
+                                                                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="card-block">
+                                                                        <div class="form-group">
+                                                                            <label for="venueSelect">Select a DC </label>
+                                                                            <select class="form-control" id="venueSelect">
+                                                                                <option selected disabled>Choose your DC</option>
+                                                                                <option>Mamram </option>
+                                                                                <option>Teddy</option>
+                                                                                <option>Venue 3</option>
+                                                                                <option>Venue 4</option>
+                                                                                <option>Venue 5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card">
+                                                                <div class="card-header" role="tab" id="headingTwo">
+                                                                    <h5 class="mb-0">
+                                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                            Source
+                                                                        </a>
+                                                                    </h5>
+                                                                </div>
+                                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                                    <div class="card-block">
+                                                                        <div class="form-group">
+                                                                            <label for="kioskSelectVenue"></label>
+                                                                            <div class="form-group">
+                                                                                <labe> segment source</labe>
+                                                                                <textarea type="text" class="form-text" id='segment source' , placeholder="class A = 127.0.0.0
+                                                                                                             class B = 123.10.0.0
+                                                                                                             class C = 123.23.23.0
+                                                                                                             host = 123.23.22.56 "></textarea>
+                                                                            </div>
+                                                                            <button class="btn btn-secondary" id="infoContinue">Continue</button>s
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="placementPanel" role="tabpanel">
+                                                                <h4>Source</h4>
+                                                                <div id="accordion" class="mb-3" role="tablist" aria-multiselectable="true">
+                                                                    <div class="card">
+                                                                        <div class="card-header" role="tab" id="headingOne">
+                                                                            <h5 class="mb-0">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                                    Ip Address Location
+                                                                                </a>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                            <div class="card-block">
+                                                                                <div class="form-group">
+                                                                                    <label for="venueSelect">Select a DC </label>
+                                                                                    <select class="form-control" id="venueSelect">
+                                                                                        <option selected disabled>Choose your DC</option>
+                                                                                        <option>Mamram </option>
+                                                                                        <option>Teddy</option>
+                                                                                        <option>Venue 3</option>
+                                                                                        <option>Venue 4</option>
+                                                                                        <option>Venue 5</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <div class="card-header" role="tab" id="headingTwo">
+                                                                            <h5 class="mb-0">
+                                                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                                    destination
+                                                                                </a>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                                            <div class="card-block">
+                                                                                <div class="form-group">
+                                                                                    <label for="kioskSelectVenue"></label>
+                                                                                    <div class="form-group">
+                                                                                        <labe> segment destination</labe>
+                                                                                        <textarea type="text" class="form-text" id='segment destination' , placeholder="class A = 127.0.0.0
+                                                                                                             class B = 123.10.0.0
+                                                                                                             class C = 123.23.23.0
+                                                                                                             host = 123.23.22.56 "></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <div class="card-header" role="tab" id="headingThree">
+                                                                            <h5 class="mb-0">
+                                                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                                    Specific Screens
+                                                                                </a>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                                            <div class="card-block">
+                                                                                <div class="form-group">
+                                                                                    <label for="kioskSelectVenue">First, choose a venue.</label>
+                                                                                    <select class="form-control" id="kioskSelectVenue">
+                                                                                        <option selected disabled>Choose a venue</option>
+                                                                                        <option>Venue 1</option>
+                                                                                        <option>Venue 2</option>
+                                                                                        <option>Venue 3</option>
+                                                                                        <option>Venue 4</option>
+                                                                                        <option>Venue 5</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="exampleSelect2">Then select screens (you can select multiple)</label>
+                                                                                    <select multiple class="form-control" id="exampleSelect2">
+                                                                                        <option>Kiosk 1 - Screen 1</option>
+                                                                                        <option>Kiosk 1 - Screen 2</option>
+                                                                                        <option>Kiosk 2 - Screen 1</option>
+                                                                                        <option>Kiosk 2 - Screen 2</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button class="btn btn-secondary" id="placementContinue">Continue</button>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="schedulePanel" role="tabpanel">
+                                                                <h4>Schedule</h4>
+                                                                <div id="scheduleAccordion" class="mb-3" role="tablist" aria-multiselectable="true">
+                                                                    <div class="card">
+                                                                        <div class="card-header" role="tab" id="headingOne">
+                                                                            <h5 class="mb-0">
+                                                                                <a data-toggle="collapse" data-parent="#scheduleAccordion" href="#scheduleAccordioncollapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                                    Start and Stop Date
+                                                                                </a>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div id="scheduleAccordioncollapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                            <div class="card-block">
+                                                                                <div class="form-group row">
+                                                                                    <label for="example-date-input" class="col-2 col-form-label">Start Date</label>
+                                                                                    <div class="col-10">
+                                                                                        <input class="form-control" type="date" value="2018-01-09" id="start-date">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label for="example-date-input" class="col-2 col-form-label">Stop Date</label>
+                                                                                    <div class="col-10">
+                                                                                        <input class="form-control" type="date" value="2018-01-09" id="stop-date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <div class="card-header" role="tab" id="headingTwo">
+                                                                            <h5 class="mb-0">
+                                                                                <a class="collapsed" data-toggle="collapse" data-parent="#scheduleAccordion" href="#scheduleAccordioncollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                                    Rules for Specific Days
+                                                                                </a>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div id="scheduleAccordioncollapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                                            <div class="card-block">
+                                                                                <h6>Play on the following days (check all that apply)</h6>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="sunday">
+                                                                                        Sunday
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="monday">
+                                                                                        Monday
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="tuesday">
+                                                                                        Tuesday
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="wednesday">
+                                                                                        Wednesday
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="thursday">
+                                                                                        Thursday
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="friday">
+                                                                                        Friday
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input type="checkbox" class="form-check-input" id="saturday">
+                                                                                        Saturday
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <div class="card-header" role="tab" id="headingThree">
+                                                                            <h5 class="mb-0">
+                                                                                <a class="collapsed" data-toggle="collapse" data-parent="#scheduleAccordion" href="#scheduleAccordioncollapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                                    Rules for Specific Times
+                                                                                </a>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div id="scheduleAccordioncollapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                                            <div class="card-block">
+                                                                                <h6>Play during the following timeframes (applies to each day)</h6>
+                                                                                <div class="form-group row">
+                                                                                    <label for="example-time-input" class="col-2 col-form-label">Start Time</label>
+                                                                                    <div class="col-10">
+                                                                                        <input class="form-control" type="time" value="13:45:00" id="start-time">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label for="example-time-input" class="col-2 col-form-label">End Time</label>
+                                                                                    <div class="col-10">
+                                                                                        <input class="form-control" type="time" value="13:45:00" id="end-time">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button class="btn btn-secondary" id="scheduleContinue">Continue</button>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="reviewPanel" role="tabpanel">
+                                                                <h4>Review</h4>
+                                                                <button class="btn btn-primary btn-block" id="activate">Activate this Campaign!</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress mt-5">
+                                                            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Step 1 of 5</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary">Save for later</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- partial -->
+                                        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                        <script src='https://unpkg.com/popper.js'></script>
+                                        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+                                        <script src="./forms_FW.js"></script>
+                            </body>
+</html>

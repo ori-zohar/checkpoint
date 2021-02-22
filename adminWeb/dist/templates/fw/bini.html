@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">מידור רישתי</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Activity Log</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    Authentication
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="fw/bini.html">טופס לפתיחת חסימות</a>
+                                        <a class="nav-link" href="register.html">Register</a>
+                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Error
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="401.html">401 Page</a>
+                                        <a class="nav-link" href="404.html">404 Page</a>
+                                        <a class="nav-link" href="500.html">500 Page</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="sb-sidenav-menu-heading">Addons</div>
+                        <a class="nav-link" href="tables.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Tables
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    מידור רישתי
+                </div>
+            </nav>
+            <div class="container-contact100" style="background-image: url('./images/f-02.jpg');">
+                <div class="wrap-contact100">
+                    <form class="contact100-form validate-form">
+                        <span class="contact100-form-title">
+                            פתיחת חסימות
+                        </span>
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                            <span class="label-input100"> name *</span>
+                            <input class="input100" id="name" type="text" name="name" placeholder="Enter your name">
+                        </div>
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <span class="label-input100">Enter your project *</span>
+                            <input class="input100" id="project" type="text" name="project" placeholder="Enter your project">
+                        </div>
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" class="wrap-input100">
+                            <span class="label-input100">Your source</span>
+                            <textarea class="input100" id="source" type="text" name="source" placeholder="class A = 127.0.0.0
+                                                                                                    class B = 123.10.0.0
+                                                                                                    class C = 123.23.23.0
+                                                                                                     host = 123.23.22.56 "></textarea>
+                        </div>
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" class="wrap-input100">
+                            <span class="label-input100">Your destination</span>
+                            <textarea class="input100" id="destination" type="text" name="destination" placeholder="class A = 127.0.0.0
+                                                                                                             class B = 123.10.0.0
+                                                                                                             class C = 123.23.23.0
+                                                                                                             host = 123.23.22.56 "></textarea>
+                        </div>
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" class="wrap-input100">
+                            <span class="label-input100">Your port -TCP</span>
+                            <textarea class="input100" id="port_TCP" type="text" name="port_tcp" placeholder="443"></textarea>
+                        </div>
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" class="wrap-input100">
+                            <span class="label-input100">Your port - UDP</span>
+                            <textarea class="input100" id="port_UDP" type="text" name="port_udp" placeholder="80"></textarea>
+                        </div>
+                        <div class="wrap-input100">
+
+                            <input type="date" source="startDate" id="startDate" placeholder="Start Date" class="form-control">
+                        </div>
+                        <div class="wrap-input100">
+                            <span class="label-input100">link type</span>
+                            <select class="input100" id="Link_type" type="text" name="link_type">
+                                <option value="">--Select Link type--</option>
+                                <option dir="rtl" value="דו כיווני">דו כייוני</option>
+                                <option dir="rtl" value="חד כיווני ">חד כיווני</option>
+                            </select>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Message is required">
+                            <span class="label-input100">Message</span>
+                            <textarea class="input100" id="message" name="message" placeholder="Your message here..."></textarea>
+                        </div>
+
+                        <div class="alert alert-success" role="alert" id="alert_success">
+                            <h4 class="alert-heading">Well done!</h4>
+                            <h6>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</h6>
+                            <h6 class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</h6>
+                        </div>
+                        <center>
+                            <table align="center" style="align-items:center">
+                                <tr style="text-align:center">
+                                    <td>
+                                        <div class="container-contact100-form-btn">
+                                            <div class="wrap-contact100-form-btn">
+                                                <div class="contact100-form-bgbtn"></div>
+
+                                                <a href="../web/index.html" < type="button"  class="contact100-form-btn" >back</></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width:3vw"></td>
+                                    <td>
+                                        <div class="container-contact100-form-btn">
+                                            <div class="wrap-contact100-form-btn">
+                                                <div class="contact100-form-bgbtn"></div>
+                                                <button class="contact100-form-btn" onclick="Doit()"> submit </button>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width:3vw"></td>
+                                    <td>
+                                        <div class="container-contact100-form-btn">
+                                            <div class="wrap-contact100-form-btn">
+                                                <div class="contact100-form-bgbtn"></div>
+
+                                                <a data-toggle="modal" data-dynamic="true" href="#scrollModal" class="contact100-form-btn">לעזרה לחץ  כאן</a>
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </center>
+
+
+                    </form>
+
+
+                    <div id="scrollModal" class="modal hide">
+                        <div class="modal-header">
+                            <a class="close" data-dismiss="modal">&times;</a>
+                            <h2>עזרה </h2>
+                        </div>
+
+
+                        <div class="modal-body">
+                            <p>שלום לקוח יקר </p>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                            <p>Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus.</p>
+                            <p>Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+
+                        </div>
+
+
+
+                    </div>
+                    <div id="dropDownSelect1"></div>
+
+                    <!--===============================================================================================-->
+                    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+                    <!--===============================================================================================-->
+                    <script src="vendor/bootstrap/js/popper.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+                    <!--===============================================================================================-->
+                    <script src="vendor/select2/select2.min.js"></script>
+                    <!--===============================================================================================-->
+                    <script>
+
+                        function Doit() {
+                            var name = $("#name")[0].value;
+                            var source = $("#source").val();
+                            var destination = $("#destination").val();
+                            var port_UDP = $("#port_UDP").val();
+                            var port_TCP = $("#port_TCP").val();
+                            var Link_type = $("#Link_type").val
+                                ();
+                            var startDate = $("#startDate")[0].value;
+                            var message = $("#message").val();
+                            var data = {
+                                "name": name,
+                                "source": source,
+                                "destination": destination,
+                                "port_TCP": port_TCP,
+                                "port_UDP": port_UDP,
+                                "Link_type": Link_type,
+                                "startDate": startDate,
+                                "message": message
+                            }
+
+                        }
+                        //var fso= new ActiveXObject("scripting.fileSystemObject");
+                        //var s = fso.OpenTextFile("../c:/data.csv", 8);
+                        //s.WrirtLine(data)
+                        //s.Close();
+                    </script>
+
+</body></html> 

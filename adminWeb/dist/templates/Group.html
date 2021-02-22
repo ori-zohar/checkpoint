@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery.min.js"></script>
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="http://103.12.3.152/adminWeb/dist/templates/Group/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/css/util.css">
+    <link rel="stylesheet" type="text/css" href="http://103.12.3.152/adminWeb/dist/templates/Group/css/main.css">
+    <!--===============================================================================================-->
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <link  rel="stylesheet" href="http://103.12.3.152/adminWeb/dist/templates/css/styles.css"  />
+        <link href="http://103.12.3.152/adminWeb/dist/templates/js/jquery.dataTables.min.js" rel="stylesheet" crossorigin="anonymous" />
+        <link href="http://103.12.3.152/adminWeb/dist/templates/js/dataTables.bootstrap4.min.js" rel="stylesheet" crossorigin="anonymous" />
+        <script src="http://103.12.3.152/adminWeb/dist/templates/font-awesome/js/all.min.js" ></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">מידור רישתי</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <h6>Dashboard</h6>
+                            </a>
+                            <div class="sb-sidenav-menu-heading">From</div>
+                            <a class="nav-link" href="bini.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                <h5>טופס לפתיחת חסימות</h5> 
+                            </a>
+                            <a class="nav-link" href="Group.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <h5>הוספת סיגמנט לקבוצה</h5>  
+                            </a>
+                           
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="bini.html">טופס לפתיחת חסימות</a>
+                                            <a class="nav-link" href="Group.html">הוספת סיגמנט לקבוצה</a>
+                                            <a class="nav-link" href=#></a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        מידור רישתי
+                    </div>
+            </div>
+                  
+            <div id="layoutSidenav_content">
+                    <main>
+                        <div class="container-fluid">
+                            <h1 class="mt-4">Group</h1>
+                            <ol class="breadcrumb mb-4">
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="tables.html">Tables</a></li>
+                                <li class="breadcrumb-item"><a href="charts.html">Charts</a></li>
+                                <li class="breadcrumb-item"><a href="bini.html">open fw</a></li>
+                                <li class="breadcrumb-item"><a href="Group.html">Group</a></li>
+                                
+                                
+                                <li class="breadcrumb-item active">Group</li>
+                            </ol>
+                <div class="container-contact100">
+
+                    <div class="wrap-contact100">
+                        <form class="contact100-form validate-form">
+                            <div class="form-group">
+                                <label for="name_group">name-Group</label>
+                                <select source="name_group" id="name_group" class="form-control" required= "true">
+                                    <option value="">--Select name group --</option>
+                                    <option>mamram</option>
+                                    <option>marganit</option>
+                                    <option>user mamram marganit</option>
+                                    <option>Pakmz</option>
+                                    <option>tacti</option>
+                                </select>
+                            </div>
+                            <div class="wrap-input100 rs1-wrap-input100 validate-input" class="wrap-input100">
+                                    <span class="label-input100">Your ip address  *</span>
+                                    <input class="input100" id="IP2" type="text" placeholder="Enter your ip address" name= "IP2" >
+                                    <button type="button" class="btn btn-outline-success"<a href="#" class="btn btn_send" id="btn_Add" onclick="Add_ips('IP2', 'IpAddress');" style="width:13vw;margin-right:0.5vw;" >הוספת כתובת</a></button>
+                                    <button type="button" class="btn btn-outline-danger"<a href="#" class="btn btn_send" id="btn_Clear" onclick="Clear_ips('IP2', 'IpAddress');" style="width:13vw;margin-right:0.5vw;" >נקה</a></button>
+                                    <textarea class="input100" id="IpAddress" type="text" name="destination" required= "true" placeholder="class A = 127.0.0.0
+                                                                                                                     class B = 123.10.0.0
+                                                                                                                     class C = 123.23.23.0
+                                                                                                                     host = 123.23.22.56 " readonly ></textarea>
+                                
+                            
+
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>
+                                   <center ><h4>בדיקה</h4> אנא ממך כדי שהפנייה שלך תטופל בהקדם האפשרי יש לוודא שהנתונים שאתה מזין הינם נכונים!</center>
+
+
+                                </strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                         
+
+                            <div class="container-contact100-form-btn">
+                                <button class="contact100-form-btn " onclick="goPython">
+                                    <span>
+                                        <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                                        Send
+                                    </span>
+
+                                </button>
+                                <a href="index.html" <button type="button"  class="contact100-form-btn ">back</button></a>
+                            </div>
+                            <div>
+
+                            </div>
+                            <a data-toggle="modal" data-dynamic="true" href="#scrollModal" class="btn btn-success btn-large">לעזרה לחץ  כאן</a>
+                    </div>
+                    <div id="scrollModal" class="modal hide">
+                        <div class="modal-header">
+                            <a class="close" data-dismiss="modal">&times;</a>
+                            <h3>עזרה </h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>שלום לקוח יקר </p>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                            <p>Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus.</p>
+                            <p>Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+                            </span>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <div id="dropDownSelect1"></div>
+                 
+                <!--===============================================================================================-->
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/jquery/jquery-3.2.1.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/animsition/js/animsition.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/bootstrap/js/popper.js"></script>
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/bootstrap/js/bootstrap.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/select2/select2.min.js"></script>
+                <!--===============================================================================================-->
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/daterangepicker/moment.min.js"></script>
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/daterangepicker/daterangepicker.js"></script>
+                <!--===============================================================================================-->
+                <script src="http://103.12.3.152/adminWeb/dist/templates/Group/vendor/countdowntime/countdowntime.js"></script>
+                <!--===============================================================================================-->
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                
+                <script>
+
+                    function Add_ips(field, textarea) {
+
+                        var Temp = $("#" + field).val();
+
+                        var All = $("#" + textarea).val();
+                        if (All == "") $("#" + textarea).val(Temp + "\n");
+                        else $("#" + textarea).val(All + Temp + "\n");
+
+                        $("#" + field).val("");
+
+                    }
+
+
+
+                    function Clear_ips(field, textarea) {
+                        $("#" + textarea).val("");
+                        $("#" + field).val("");
+                    }
+
+                  
+
+                    function Doit(){
+                        var name_group = document.all("Name_group").value;
+                        var net = document.all("network_class_c").value;
+                        CallApi(name_group, net);
+                    }
+
+
+                    function CallApi(name_group, net){
+                        $.ajax({
+                            type:"POST",
+                            concatType:"application/json; charset =utf-8",
+                            url :"/Gdata",
+                            dataType : "json",
+                            data : {'name_group':name_group , 'net' : net},
+                            success : function callbakeFunc(response){
+                                alert(response);
+                                console.log(response.message);
+                                console.log(response.keys);
+                                console.log(response.data);
+
+                            },
+
+
+
+                        });
+                    }   
+                    
+                    function goPython(){
+                        $.ajax({
+                            type:"POST",
+                            url : "./Group_",
+                            context : document.body
+                        }).done(function(){
+                            alert ("החוק התקבל בהצלחה")
+                        });
+                    }
+
+
+
+
+                
+            </script>
+
+        </body>
+</html>
