@@ -36,7 +36,7 @@ def server_Group():
         network = request.form['network']
 
         data ={'name' : name ,'network' : network}
-        with open(r"C:\Users\s8498053.ARMY\Desktop\WEB_bini\JSON\Gdata.json" ,'w', encoding = "utf-8") as outfile:
+        with open(r"C:\Desktop\WEB_bini\JSON\Gdata.json" ,'w', encoding = "utf-8") as outfile:
             json.dump(data ,outfile)
         print (data)
         return jsonify( data = data)
