@@ -30,7 +30,7 @@ with APIClient(client_args) as client:
 #################################################################
 #data fot client
 #################################################################
-    with open(r"C:\Users\s8498053.ARMY\Desktop\WEB_bini\JSON\nonprod.json") as json_file:
+    with open(r"C:\Desktop\WEB_bini\JSON\nonprod.json") as json_file:
         global project , source ,destination ,port_TCP ,port_UDP
         data = json.load(json_file)
         name =data['name']
@@ -1297,7 +1297,7 @@ def main():
     global All_service
     global source_client
     global destination_client
-    log_file = open (r"C:\Users\s8498053.ARMY\Desktop\WEB_bini\log_file\logfile.txt" , 'w+')
+    log_file = open (r"C:\Desktop\WEB_bini\log_file\logfile.txt" , 'w+')
     # close the log file
     log_file.close()
     call(["python" , "discard_sessions.py"])
